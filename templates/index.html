@@ -139,12 +139,12 @@
         <div class="div-2">
             <div class="div-3">
                 <div class="column">
-                    <img loading="lazy" srcset="{{album_art}}" class="img" id="img" />
+                    <img loading="lazy" srcset="{{.AlbumArt}}" class="img" id="img" />
                 </div>
                 <div class="column-2">
                     <span class="span">
-                        <div class="div-4 marquee" id="title">{{title}}</div>
-                        <div class="div-5 marquee2" id="artist">{{artist}}</div>
+                        <div class="div-4 marquee" id="title">{{.Title}}</div>
+                        <div class="div-5 marquee2" id="artist">{{.Artist}}</div>
                     </span>
                 </div>
             </div>
@@ -169,8 +169,8 @@
         return ctx.measureText(txt).width;
     }
 
-    var current_title = `{{title}}`;
-    var current_artist = `{{artist}}`;
+    var current_title = {{.Title}};
+    var current_artist = {{.Artist}};
     if (getTextWidth(current_title, 'title') > 280)
         document.getElementById('title').innerHTML = `<marquee>${current_title}</marquee>`
     if (getTextWidth(current_artist, 'artist') > 280)
@@ -192,6 +192,9 @@
         }).done(function (response, textStatus, xhr) {
             console.log(response)
             let res = response;
+            if (!res || !res.item) {
+                return;
+            }
             console.log(xhr.status)
             console.log(document.getElementById('title').innerText)
             console.log(res['item']['name'])
@@ -211,7 +214,9 @@
                 if (getTextWidth(current_artist, 'artist') > 280)
                     document.getElementById('artist').innerHTML = `<marquee>${current_artist}</marquee>`
             }
-            document.getElementById('img').srcset = res['item']['album']['images'][0]['url'];
+            if (res['item']['album'] && res['item']['album']['images'] && res['item']['album']['images'].length > 0) {
+                document.getElementById('img').srcset = res['item']['album']['images'][0]['url'];
+            }
         });
     }, 10000);
 </script>
