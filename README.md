@@ -1,15 +1,11 @@
 # SpotiLayer
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png' width=100>
-
 ## 개요
 
 **SpotiLayer**는 Spotify에서 현재 재생 중인 음악 정보(곡 제목, 아티스트, 앨범 아트)를 실시간으로 표시해주는 방송 오버레이 프로그램입니다.  
 OBS Studio, XSplit 등의 방송 녹화 프로그램에서 **'브라우저 소스'**로 등록하여 스트리밍 화면에 예쁜 음악 위젯을 띄울 수 있습니다.
 
 Go 언어 기반의 단일 바이너리 GUI 애플리케이션으로 동작하여 별도의 런타임이나 복잡한 환경 설정 없이 바로 실행할 수 있습니다.
-
----
 
 ## 사전 준비: Spotify API 키 발급
 
@@ -22,8 +18,6 @@ Go 언어 기반의 단일 바이너리 GUI 애플리케이션으로 동작하�
    - **Which API/SDKs are you planning to use?**: `Web API` 체크
    - 약관 동의 체크 후 **Save**를 누릅니다.
 3. 앱 페이지의 **Basic Information**으로 들어가 `Client ID`와 `Client Secret`(View client secret 클릭)을 확인합니다.
-
----
 
 ## 빌드 및 실행 방법
 
@@ -58,8 +52,6 @@ make run
 3. **▶ 서버 시작** 버튼을 누릅니다.
 4. **🌐 Spotify 로그인** 버튼을 눌러 브라우저에서 Spotify 계정을 연동합니다.
 5. **📋 OBS URL 복사** 버튼을 눌러 URL(`http://127.0.0.1:8888`)을 복사한 뒤, OBS의 '브라우저 소스'에 등록합니다.
-
----
 
 ## OBS Studio 연동 방법
 
