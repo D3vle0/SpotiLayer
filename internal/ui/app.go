@@ -244,7 +244,7 @@ func (ui *UI) buildLayout() {
 func (ui *UI) updateServerStatusUI(running bool, addr string) {
 	fyne.Do(func() {
 		if running {
-			ui.statusBadge.SetText("🟢 서버 실행 중 (" + addr + ")")
+			ui.statusBadge.SetText("🟢 서버 실행 중")
 			ui.serverToggleBtn.SetText("⏹ 서버 중지")
 			ui.loginBtn.Enable()
 			ui.copyOBSBtn.Enable()
