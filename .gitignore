@@ -160,6 +160,9 @@ cython_debug/
 #.idea/
 
 # Go binary and configs
+SpotiLayer
+SpotiLayer*
+SpotiLayer.exe
 spotify-obs
 spotify-obs.exe
 *.exe

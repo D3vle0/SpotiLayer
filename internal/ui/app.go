@@ -14,9 +14,9 @@ import (
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
 
-	"spotify-obs/internal/config"
-	"spotify-obs/internal/server"
-	"spotify-obs/internal/spotify"
+	"SpotiLayer/internal/config"
+	"SpotiLayer/internal/server"
+	"SpotiLayer/internal/spotify"
 )
 
 type UI struct {
@@ -42,12 +42,12 @@ type UI struct {
 }
 
 func NewUI(cfg *config.Config, spClient *spotify.Client, srv *server.Server, fontBytes []byte) *UI {
-	a := app.NewWithID("com.spotify-obs.app")
+	a := app.NewWithID("com.spotilayer.app")
 	if len(fontBytes) > 0 {
 		a.Settings().SetTheme(newCustomKoreanTheme(fontBytes))
 	}
 
-	w := a.NewWindow("Spotify OBS Overlay")
+	w := a.NewWindow("SpotiLayer")
 	w.Resize(fyne.NewSize(450, 420))
 	w.CenterOnScreen()
 
@@ -192,7 +192,7 @@ func (ui *UI) saveInputsToConfig() {
 
 func (ui *UI) buildLayout() {
 	// Top Header
-	titleLabel := widget.NewLabel("🎧 Spotify OBS Overlay")
+	titleLabel := widget.NewLabel("🎧 SpotiLayer")
 	titleLabel.TextStyle = fyne.TextStyle{Bold: true}
 
 	headerBox := container.NewHBox(titleLabel, layout.NewSpacer(), ui.statusBadge)

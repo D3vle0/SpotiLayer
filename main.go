@@ -4,10 +4,10 @@ import (
 	"embed"
 	"log"
 
-	"spotify-obs/internal/config"
-	"spotify-obs/internal/server"
-	"spotify-obs/internal/spotify"
-	"spotify-obs/internal/ui"
+	"SpotiLayer/internal/config"
+	"SpotiLayer/internal/server"
+	"SpotiLayer/internal/spotify"
+	"SpotiLayer/internal/ui"
 )
 
 //go:embed templates/* static/*

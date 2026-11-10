@@ -1,6 +1,6 @@
 .PHONY: all build run clean
 
-BINARY_NAME=spotify-obs
+BINARY_NAME=SpotiLayer
 
 all: build
 

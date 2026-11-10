@@ -1,4 +1,4 @@
-module spotify-obs
+module SpotiLayer
 
 go 1.27.2
 

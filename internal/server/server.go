@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"spotify-obs/internal/config"
-	"spotify-obs/internal/spotify"
+	"SpotiLayer/internal/config"
+	"SpotiLayer/internal/spotify"
 )
 
 type Server struct {
