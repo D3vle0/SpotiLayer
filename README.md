@@ -35,8 +35,6 @@ make build
 go build -ldflags="-s -w" -o SpotiLayer .
 ```
 
-### 실행
-
 생성된 실행 파일을 더블클릭하거나 터미널에서 실행합니다.
 
 ```bash
