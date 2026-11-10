@@ -72,9 +72,10 @@ jobs:
       # Windows ARM64 Toolchain (llvm-mingw)
       - name: Setup llvm-mingw for Windows ARM64
         if: matrix.os == 'windows' && matrix.arch == 'arm64'
-        uses: mstorsjo/setup-llvm-mingw@v1
-        with:
-          target-arch: aarch64
+        run: |
+          sudo mkdir -p /opt/llvm-mingw
+          curl -sL https://github.com/mstorsjo/llvm-mingw/releases/download/20261104/llvm-mingw-20261104-ucrt-ubuntu-22.04-x86_64.tar.xz | sudo tar -xJ --strip-components=1 -C /opt/llvm-mingw
+          echo "/opt/llvm-mingw/bin" >> $GITHUB_PATH
 
       # Build Binary
       - name: Build Binary
